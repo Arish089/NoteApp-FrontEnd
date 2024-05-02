@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Signup from './routes/Signup'
 import Login from './routes/Login'
 import Notes from './routes/Notes'
+import Home from './routes/Home'
 
 function App() {
   
@@ -18,7 +19,7 @@ function App() {
     <>
     <button onClick={handleLogout}>Logout</button>
     <Routes>
-      <Route path='/' element={{}}/>
+      <Route path='/' element={<Home />}/>
       <Route path='/signup' element={<Signup />}/>
       <Route path='/login' element={<Login />}/>
       <Route path='/notes' element={<Notes />}/>
