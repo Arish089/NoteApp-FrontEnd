@@ -55,7 +55,10 @@ const deleteNote = async(id)=>{
         method: "PATCH",
         headers:{
           "Authorization": `Bearer ${token}`
-        }
+        },
+        body: JSON.stringify({
+          
+        })
       })
       const data = await resp.json()
       console.log(data);
