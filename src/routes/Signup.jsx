@@ -13,7 +13,7 @@ const handleSubmit = async(e)=>{
  // console.log(email, username, password);
 e.preventDefault();
 try {
-  const resp = await fetch(`noteapp-production-0d40.up.railway.app/user/register`,{
+  const resp = await fetch(`https://noteapp-production-0d40.up.railway.app/user/register`,{
     method: "POST",
     headers:{
       "Content-Type": "application/json"

@@ -6,7 +6,7 @@ const [notes, setNotes] = useState([])
 const navigate = useNavigate()
   const getNotes = async (token)=>{
     try {
-      const resp =await fetch('noteapp-production-0d40.up.railway.app/notes',{
+      const resp =await fetch('https://noteapp-production-0d40.up.railway.app/notes',{
         method:"GET",
         headers:{
           "Authorization": `Bearer ${token}`
@@ -33,7 +33,7 @@ const navigate = useNavigate()
 const deleteNote = async(id)=>{
   const token = localStorage.getItem('token')
   try {
-    const resp = await fetch(`noteapp-production-0d40.up.railway.app/notes/delete/${id}`,{
+    const resp = await fetch(`https://noteapp-production-0d40.up.railway.app/notes/delete/${id}`,{
       method: "DELETE",
       headers:{
         "Authorization": `Bearer ${token}`
@@ -51,13 +51,13 @@ const deleteNote = async(id)=>{
   const updateNote = async(id)=>{
     const token = localStorage.getItem('token')
     try {
-      const resp = await fetch(`noteapp-production-0d40.up.railway.app/notes/update/${id}`,{
+      const resp = await fetch(`https://noteapp-production-0d40.up.railway.app/notes/update/${id}`,{
         method: "PATCH",
         headers:{
           "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
-          
+
         })
       })
       const data = await resp.json()

@@ -10,7 +10,7 @@ const Login = () => {
 const handleSubmit = async(e)=>{
 e.preventDefault();
 try {
-  const resp = await fetch(`noteapp-production-0d40.up.railway.app/user/login`,{
+  const resp = await fetch(`https://noteapp-production-0d40.up.railway.app/user/login`,{
     method: "POST",
     headers:{
       "Content-Type":"application/json"
@@ -20,12 +20,18 @@ body:JSON.stringify({
   password
 })
   })
+  
+console.log(resp);
+  if(!resp.ok){
+    throw new Error('Login failed')
+  }
   const data = await resp.json()
   console.log(data);
   localStorage.setItem('token', data.token)
-alert("logged in successfully")
-  navigate('/notes')
+  alert("logged in successfully")
+  window.location.href = '/notes'
 } catch (error) {
+
   console.log(error);
 }
 }
